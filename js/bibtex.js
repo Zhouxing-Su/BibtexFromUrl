@@ -61,6 +61,9 @@ function formatDate(d, format)
   case "L-3":
     date = day + '.' + month + '.' + d.getFullYear();
     break;
+  case "O-1":
+    date = month + '/' + d.getFullYear();
+    break;
   case "B-1":
     date = d.getFullYear() + '/' + month + '/' + day;
     break;
@@ -68,12 +71,8 @@ function formatDate(d, format)
     date = d.getFullYear() + '-' + month + '-' + day;
     break;
   case "B-3":
-    date = d.getFullYear() + '.' + month + '.' + day;
-    break;
-  case "O-1":
-    date = month + '/' + d.getFullYear();
-    break;
   default:
+    date = d.getFullYear() + '.' + month + '.' + day;
     date = month + '/' + day + '/' + d.getFullYear();
   }
 

@@ -76,12 +76,3 @@ chrome.contextMenus.onClicked.addListener(function(info, tab)
     });
   });
 });
-
-chrome.runtime.onInstalled.addListener(function() {
-  chrome.contextMenus.create(
-    {
-      id: "bibtex",
-      title: "Copy BibTeX to clipboard",
-      contexts: ["all"]
-    });
-});
