@@ -73,7 +73,6 @@ function formatDate(d, format)
   case "B-3":
   default:
     date = d.getFullYear() + '.' + month + '.' + day;
-    date = month + '/' + day + '/' + d.getFullYear();
   }
 
   return date;
@@ -235,8 +234,16 @@ function generateBibTeXEntry(tabTitle, tabUrl, online_not_misc,
       entry += "author = {},\n";
   }
 
-  // title with url
-  entry += "title = {\\href{" + tabUrl + "}{" + lescape(tabTitle) + "}},\n";
+  // title
+  // entry += "title = {\\href{" + tabUrl + "}{" + lescape(tabTitle) + "}},\n";
+  entry += "title = {" + lescape(tabTitle) + "},\n";
+
+  // url
+  if (online_not_misc == "true") {
+      entry += "url = {" + tabUrl + "},\n";
+  } else {
+      entry += "howpublished = {\\url{" + tabUrl + "}},\n";
+  }
 
   // month and year
   if (omit_empty != "true") {
