@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
 
-  "name": "BibTeX entry from URL",
-  "short_name": "url_to_bib",
+  "name": "Url2Bib",
+  "short_name": "Url2Bib",
   "description": "This extension provides a BibTeX reference for the active URL",
-  "version": "1.3.1",
+  "version": "1.0.0",
 
   "options_page": "options.html",
   "options_ui": {

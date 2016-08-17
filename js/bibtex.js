@@ -236,15 +236,8 @@ function generateBibTeXEntry(tabTitle, tabUrl, online_not_misc,
       entry += "author = {},\n";
   }
 
-  // title
-  entry += "title = {" + lescape(tabTitle) + "},\n";
-
-  // url
-  if (online_not_misc == "true") {
-      entry += "url = {" + tabUrl + "},\n";
-  } else {
-      entry += "howpublished = {\\url{" + tabUrl + "}},\n";
-  }
+  // title with url
+  entry += "title = {\\href{" + tabUrl + "}{" + lescape(tabTitle) + "}},\n";
 
   // month and year
   if (omit_empty != "true") {
